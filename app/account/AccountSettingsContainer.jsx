@@ -16,7 +16,7 @@ var AccountSettingsContainer = React.createClass({
           <AccountSettings>
           </AccountSettings>
 
-        </div>
+        </div>s
       </div>
     );
   }
