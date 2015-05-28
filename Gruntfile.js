@@ -12,7 +12,7 @@ module.exports = function (grunt) {
 
     browserify: {
       options: {
-        transform: [ require('grunt-react').browserify ]
+        transform: [ [ require('grunt-react').browserify, { harmony: true } ] ]
       },
       client: {
         src: ['app/**/*.jsx'],

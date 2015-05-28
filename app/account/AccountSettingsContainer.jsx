@@ -1,4 +1,7 @@
 var React = require('react');
+var Router = require('react-router');
+var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
+
 
 var SectionHeader = require('./SectionHeader.jsx');
 var AccountSettings = require('./AccountSettings.jsx');
@@ -31,25 +34,16 @@ var user = {
 var AccountSettingsContainer = React.createClass({
   render: function () {
     return (
-      <div className="row">
-        <div className="col-lg-8">
+      <div>
+        <SectionHeader title={'Account Settings'}
+          desc={'Manage your personal information, billing details and connected accounts.'}>
+        </SectionHeader>
 
-          <SectionHeader title={'Account Settings'}
-                         desc={'Manage your personal information, billing details and connected accounts.'}>
-          </SectionHeader>
-
-          <AccountSettings user={this.props.user}>
-          </AccountSettings>
-
-        </div>s
+        <AccountSettings user={user}>
+        </AccountSettings>
       </div>
     );
   }
 });
-
-React.render(
-  <AccountSettingsContainer user={user}></AccountSettingsContainer>,
-  document.getElementById('accountSettings')
-);
 
 module.exports = AccountSettingsContainer;
