@@ -3,6 +3,7 @@ var Router = require('react-router');
 var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
 
 var AccountSettingsContainer = require('./account/AccountSettingsContainer.jsx');
+var ChangePassword = require('./account/ChangePassword.jsx');
 
 var Account = React.createClass({
   render: function () {
@@ -17,12 +18,13 @@ var Account = React.createClass({
 });
 
 var routes = (
-  <Route handler={Account} path="/react-playground/web/">
+  <Route handler={Account} path="/">
     <DefaultRoute handler={AccountSettingsContainer}/>
+      <Route name="password" handler={ChangePassword}/>
   </Route>
 );
 
-Router.run(routes, Router.HistoryLocation, function (Handler) {
+Router.run(routes, function (Handler) {
   React.render(
     <Handler/>,
     document.getElementById('accountSettings')

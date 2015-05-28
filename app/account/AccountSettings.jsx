@@ -1,4 +1,6 @@
 var React = require('react');
+var Router = require('react-router');
+var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
 
 var AccountSetting = require('./AccountSetting.jsx');
 var Moment = require('moment');
@@ -19,7 +21,7 @@ var AccountSettings = React.createClass({
 
                 <AccountSetting heading={'Password'}>
                   <span>********</span>
-                  <a href="#">modify</a>
+                  <Link to="password">Modify</Link>
                 </AccountSetting>
 
                 <AccountSetting heading={'Email Preferences'}>
