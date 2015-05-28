@@ -1,6 +1,6 @@
 import React from 'react';
 
-import SectionHeader from './../SectionHeader.jsx';
+import SectionHeader from './../../SectionHeader.jsx';
 import ChangePasswordForm from './ChangePasswordForm.jsx';
 
 let ChangePassword = React.createClass({
