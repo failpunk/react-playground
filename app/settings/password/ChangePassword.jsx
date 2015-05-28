@@ -1,13 +1,14 @@
-var React = require('react');
+import React from 'react';
 
-var SectionHeader = require('./../SectionHeader.jsx');
-var ChangePasswordForm = require('./ChangePasswordForm.jsx');
+import SectionHeader from './../SectionHeader.jsx';
+import ChangePasswordForm from './ChangePasswordForm.jsx';
 
-var ChangePassword = React.createClass({
-  render: function () {
+let ChangePassword = React.createClass({
+  render () {
     return (
       <div>
-        <SectionHeader title={'Change Password'}
+        <SectionHeader
+          title={'Change Password'}
           desc={'Change your password'}>
         </SectionHeader>
 
@@ -17,4 +18,4 @@ var ChangePassword = React.createClass({
   }
 });
 
-module.exports = ChangePassword;
+export default ChangePassword;

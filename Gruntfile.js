@@ -12,7 +12,10 @@ module.exports = function (grunt) {
 
     browserify: {
       options: {
-        transform: [ [ require('grunt-react').browserify, { harmony: true } ] ]
+        transform: [
+          [ 'babelify' ],
+          [ require('grunt-react').browserify, { harmony: true } ]
+        ]
       },
       client: {
         src: ['app/**/*.jsx'],
@@ -35,4 +38,5 @@ module.exports = function (grunt) {
 
   // register
   grunt.registerTask('default', ['jshint', 'browserify']);
+  //grunt.registerTask('default', ['browserify']);
 };

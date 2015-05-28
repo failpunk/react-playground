@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-var AccountSetting = React.createClass({
-  render: function() {
+let AccountSetting = React.createClass({
+  render () {
     return (
       <div className="form-group">
         <h4>{this.props.heading}</h4>
@@ -11,4 +11,4 @@ var AccountSetting = React.createClass({
   }
 });
 
-module.exports = AccountSetting;
+export default AccountSetting;

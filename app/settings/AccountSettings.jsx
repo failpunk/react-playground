@@ -1,12 +1,12 @@
-var React = require('react');
-var Router = require('react-router');
-var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
+import React from 'react';
+import Router from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
+import Moment from 'moment';
 
-var AccountSetting = require('./AccountSetting.jsx');
-var Moment = require('moment');
+import AccountSetting from './AccountSetting.jsx';
 
-var AccountSettings = React.createClass({
-  render: function() {
+let AccountSettings = React.createClass({
+  render () {
     return (
       <div className="row">
         <div className="col-md-12">
@@ -53,4 +53,4 @@ var AccountSettings = React.createClass({
   }
 });
 
-module.exports = AccountSettings;
+export default AccountSettings;

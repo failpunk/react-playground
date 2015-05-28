@@ -1,12 +1,13 @@
-var React = require('react');
+import React from 'react';
 
-var SectionHeader = require('./../SectionHeader.jsx');
+import SectionHeader from './../SectionHeader.jsx';
 
-var ChangeEmail = React.createClass({
-  render: function () {
+let ChangeEmail = React.createClass({
+  render () {
     return (
       <div>
-        <SectionHeader title={'Change Email'}
+        <SectionHeader
+          title={'Change Email'}
           desc={'Change your email address'}>
         </SectionHeader>
       </div>
@@ -14,4 +15,4 @@ var ChangeEmail = React.createClass({
   }
 });
 
-module.exports = ChangeEmail;
+export default ChangeEmail;

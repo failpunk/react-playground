@@ -1,8 +1,8 @@
-var React = require('react');
-var Router = require('react-router');
-var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link, Navigation} = Router;
+import React from 'react';
+import Router from 'react-router';
+import {Link, Navigation} from 'react-router';
 
-var ChangePasswordForm = React.createClass({
+let ChangePasswordForm = React.createClass({
 
   mixins: [Navigation],
 
@@ -10,7 +10,7 @@ var ChangePasswordForm = React.createClass({
     this.transitionTo('settings');
   },
 
-  render: function () {
+  render () {
     return (
       <form action="/account/change-password" method="post" id="changePassword" noValidate="novalidate">
         <div className="form-account">
@@ -34,4 +34,4 @@ var ChangePasswordForm = React.createClass({
   }
 });
 
-module.exports = ChangePasswordForm;
+export default ChangePasswordForm;

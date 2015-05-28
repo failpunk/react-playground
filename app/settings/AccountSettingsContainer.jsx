@@ -1,10 +1,9 @@
-var React = require('react');
-var Router = require('react-router');
-var {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} = Router;
+import React from 'react';
+import Router from 'react-router';
+import { DefaultRoute, Link, Route, RouteHandler } from 'react-router';
 
-
-var SectionHeader = require('./SectionHeader.jsx');
-var AccountSettings = require('./AccountSettings.jsx');
+import SectionHeader from './SectionHeader.jsx';
+import AccountSettings from './AccountSettings.jsx';
 
 var user = {
   "userId": "1000006",
@@ -31,11 +30,12 @@ var user = {
   "caslCampaign": "0"
 };
 
-var AccountSettingsContainer = React.createClass({
-  render: function () {
+let AccountSettingsContainer = React.createClass({
+  render () {
     return (
       <div>
-        <SectionHeader title={'Account Settings'}
+        <SectionHeader
+          title={'Account Settings'}
           desc={'Manage your personal information, billing details and connected accounts.'}>
         </SectionHeader>
 
@@ -46,4 +46,4 @@ var AccountSettingsContainer = React.createClass({
   }
 });
 
-module.exports = AccountSettingsContainer;
+export default AccountSettingsContainer;
