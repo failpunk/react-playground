@@ -26,7 +26,7 @@ var AccountSettings = React.createClass({
 
                 <AccountSetting heading={'Email Preferences'}>
                   <span>{this.props.user.email}</span>
-                  <a href="#">modify</a>
+                  <Link to="email">Modify</Link>
                 </AccountSetting>
 
               </div>

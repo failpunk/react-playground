@@ -1,6 +1,7 @@
 var React = require('react');
 
-var SectionHeader = require('./SectionHeader.jsx');
+var SectionHeader = require('./../SectionHeader.jsx');
+var ChangePasswordForm = require('./ChangePasswordForm.jsx');
 
 var ChangePassword = React.createClass({
   render: function () {
@@ -9,6 +10,8 @@ var ChangePassword = React.createClass({
         <SectionHeader title={'Change Password'}
           desc={'Change your password'}>
         </SectionHeader>
+
+        <ChangePasswordForm></ChangePasswordForm>
       </div>
     );
   }
