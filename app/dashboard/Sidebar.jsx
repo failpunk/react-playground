@@ -3,12 +3,10 @@ import {Link} from 'react-router';
 
 let Sidebar = React.createClass({
 
-  navItems: ['profile', 'settings', 'messages'],
-
   render: function() {
     var currentRoute = this.props.navstate.pathname;
 
-    let sidebarItems = this.navItems.map(function(item) {
+    let sidebarItems = this.props.navItems.map(function(item) {
       return (
         <SidebarItem
           name={item}

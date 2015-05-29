@@ -13,11 +13,16 @@ import ChangeEmail from './settings/email/ChangeEmail.jsx';
 
 let Dashboard = React.createClass({
 
+  navItems: ['profile', 'settings', 'messages'],
+
   render() {
     return (
       <div className="row">
         <div className="col-lg-3">
-          <Sidebar navstate={NavState.current}></Sidebar>
+          <Sidebar
+            navItems={this.navItems}
+            navstate={NavState.current}
+          ></Sidebar>
         </div>
         <div className="col-lg-8">
           <RouteHandler/>
