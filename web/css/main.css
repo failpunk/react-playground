@@ -2,3 +2,11 @@
     width: auto;
     float: none;
 }
+
+.form-control-feedback {
+    display: none;
+}
+
+form .col-lg-10 input {
+    margin-right: 10px;
+}

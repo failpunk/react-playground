@@ -18,6 +18,10 @@ let ChangePasswordForm = React.createClass({
 
   mixins: [Navigation],
 
+  getInitialState: function() {
+    return { canSubmit: false };
+  },
+
   backToSettings: function() {
     this.transitionTo('settings');
   },
@@ -34,8 +38,8 @@ let ChangePasswordForm = React.createClass({
     });
   },
 
-  submit() {
-    console.log('submit');
+  submit(data) {
+    console.log('submit', data);
   },
 
   // Validation rules
@@ -92,8 +96,10 @@ let ChangePasswordForm = React.createClass({
         validations={this.validation.types.newpassword}
         validationErrors={this.validation.errors}/>
 
-      <input type="submit" defaultValue="Update Password" className="btn btn-primary" />
-      <input type="button" defaultValue="Back" className="btn" onClick={this.backToSettings}/>
+      <div className="col-lg-10">
+        <input type="submit" defaultValue="Update Password" className="btn btn-primary" disabled={!this.state.canSubmit}/>
+        <input type="button" defaultValue="Back" className="btn" onClick={this.backToSettings}/>
+      </div>
     </Formsy.Form>
     );
   }
