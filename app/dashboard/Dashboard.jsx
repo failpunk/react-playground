@@ -1,32 +1,23 @@
 import React from 'react';
 import Router from 'react-router';
-import {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link} from 'react-router';
+import {Route, DefaultRoute, NotFoundRoute, RouteHandler, Link, State} from 'react-router';
 
+import NavState from './NavState.jsx';
 import DashboardSettings from './settings/Settings.jsx';
+import Sidebar from './Sidebar.jsx';
 import DashboardProfile from './profile/Profile.jsx';
 import DashboardMessages from './messages/Messages.jsx';
 import AccountSettingsContainer from './settings/AccountSettingsContainer.jsx';
 import ChangePassword from './settings/password/ChangePassword.jsx';
 import ChangeEmail from './settings/email/ChangeEmail.jsx';
 
-let Sidebar = React.createClass({
-  render() {
-    return (
-      <ul>
-        <li><Link to="settings">Account Settings</Link></li>
-        <li><Link to="profile">Profile</Link></li>
-        <li><Link to="messages">Message</Link></li>
-      </ul>
-    );
-  }
-});
-
 let Dashboard = React.createClass({
+
   render() {
     return (
       <div className="row">
         <div className="col-lg-3">
-          <Sidebar></Sidebar>
+          <Sidebar navstate={NavState.current}></Sidebar>
         </div>
         <div className="col-lg-8">
           <RouteHandler/>
@@ -53,7 +44,9 @@ let routes = (
   </Route>
 );
 
-Router.run(routes, function (Handler) {
+Router.run(routes, function (Handler, State) {
+  NavState.current = State;
+
   React.render(
     <Handler/>,
     document.getElementById('content')

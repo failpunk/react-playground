@@ -15,7 +15,10 @@ module.exports = function (grunt) {
         transform: [
           [ 'babelify' ],
           [ require('grunt-react').browserify, { harmony: true } ]
-        ]
+        ],
+        browserifyOptions: {
+          debug: true
+        }
       },
       client: {
         src: ['app/**/*.jsx'],
