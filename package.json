@@ -19,6 +19,8 @@
   "dependencies": {
     "babelify": "^6.1.2",
     "bootstrap": "^3.3.4",
+    "formsy-react": "^0.14.1",
+    "formsy-react-components": "^0.3.0",
     "grunt": "^0.4.5",
     "grunt-browserify": "^3.8.0",
     "grunt-contrib-jshint": "^0.11.2",
